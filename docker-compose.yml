@@ -1,0 +1,18 @@
+version: '2'
+services:
+  eureka-server:
+    image: com.hstreb/eureka-server
+    ports:
+      - "8761:8761"
+  product-web:
+    image: com.hstreb/product-web
+    links:
+      - "eureka-server:eureka"
+    ports:
+      - "8383:8383"
+  product-catalog:
+    image: com.hstreb/product-catalog
+    links:
+      - "eureka-server:eureka"
+    ports:
+      - "8181:8181"

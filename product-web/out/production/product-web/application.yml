@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: product-web
+server:
+  port: 8383
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://${EUREKA_URL:localhost}:${EUREKA_PORT:8761}/eureka/
+product-catalog:
+  ribbon:
+    OkToRetryOnAllOperations: false
+    MaxAutoRetries: 0
+    MaxAutoRetriesNextServer: 1
+    ServerListRefreshInterval: 5000
+    ConnectTimeout: 10000
+    ReadTimeout: 10000

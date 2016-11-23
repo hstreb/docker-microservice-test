@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: product-catalog
+server:
+  port: 8181
+eureka:
+  port: 8761
+  url: localhost
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://${eureka.url}:${eureka.port}/eureka/
