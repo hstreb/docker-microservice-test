@@ -14,7 +14,8 @@ public class ProductCatalogController {
     private static final Logger logger = LoggerFactory.getLogger(ProductCatalogController.class);
 
     private List<Product> products = Arrays.asList(new Product("1", "Memory DDR3 8Gb"),
-            new Product("2", "Keyboard"));
+            new Product("2", "Keyboard"),
+            new Product("3", "Mouse"));
 
     @RequestMapping(value = "/product")
     public List<Product> list() {

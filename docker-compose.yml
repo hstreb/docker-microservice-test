@@ -11,6 +11,8 @@ services:
     environment:
     - EUREKA_PORT=8761
     - EUREKA_URL=eureka
+    depends_on:
+      - "eureka"
   product-catalog:
     image: com.hstreb/product-catalog
     ports:
@@ -18,3 +20,5 @@ services:
     environment:
     - EUREKA_PORT=8761
     - EUREKA_URL=eureka
+    depends_on:
+      - "eureka"
